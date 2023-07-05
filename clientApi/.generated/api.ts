@@ -344,6 +344,25 @@ export interface SendVerificationEmailDto {
 /**
  * 
  * @export
+ * @interface SendVerificationEmailResponseDto
+ */
+export interface SendVerificationEmailResponseDto {
+    /**
+     * 
+     * @type {string}
+     * @memberof SendVerificationEmailResponseDto
+     */
+    'message': string;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof SendVerificationEmailResponseDto
+     */
+    'isVerified': boolean;
+}
+/**
+ * 
+ * @export
  * @interface SignInResponseDto
  */
 export interface SignInResponseDto {
@@ -380,6 +399,19 @@ export const SignInResponseDtoRoleEnum = {
 
 export type SignInResponseDtoRoleEnum = typeof SignInResponseDtoRoleEnum[keyof typeof SignInResponseDtoRoleEnum];
 
+/**
+ * 
+ * @export
+ * @interface SignOutResponseDto
+ */
+export interface SignOutResponseDto {
+    /**
+     * 
+     * @type {string}
+     * @memberof SignOutResponseDto
+     */
+    'message': string;
+}
 /**
  * 
  * @export
@@ -529,6 +561,25 @@ export const UserResponseDtoRoleEnum = {
 
 export type UserResponseDtoRoleEnum = typeof UserResponseDtoRoleEnum[keyof typeof UserResponseDtoRoleEnum];
 
+/**
+ * 
+ * @export
+ * @interface VerifyEmailResponseDto
+ */
+export interface VerifyEmailResponseDto {
+    /**
+     * 
+     * @type {string}
+     * @memberof VerifyEmailResponseDto
+     */
+    'message': string;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof VerifyEmailResponseDto
+     */
+    'isVerified': boolean;
+}
 
 /**
  * DefaultApi - axios parameter creator
@@ -1183,7 +1234,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async authControllerSendVerificationEmail(sendVerificationEmailDto: SendVerificationEmailDto, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+        async authControllerSendVerificationEmail(sendVerificationEmailDto: SendVerificationEmailDto, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SendVerificationEmailResponseDto>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.authControllerSendVerificationEmail(sendVerificationEmailDto, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -1202,7 +1253,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async authControllerSignout(options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+        async authControllerSignout(options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SignOutResponseDto>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.authControllerSignout(options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -1223,7 +1274,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async authControllerVerifyEmail(email: string, token: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+        async authControllerVerifyEmail(email: string, token: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VerifyEmailResponseDto>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.authControllerVerifyEmail(email, token, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -1379,7 +1430,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        authControllerSendVerificationEmail(sendVerificationEmailDto: SendVerificationEmailDto, options?: any): AxiosPromise<void> {
+        authControllerSendVerificationEmail(sendVerificationEmailDto: SendVerificationEmailDto, options?: any): AxiosPromise<SendVerificationEmailResponseDto> {
             return localVarFp.authControllerSendVerificationEmail(sendVerificationEmailDto, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1396,7 +1447,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        authControllerSignout(options?: any): AxiosPromise<void> {
+        authControllerSignout(options?: any): AxiosPromise<SignOutResponseDto> {
             return localVarFp.authControllerSignout(options).then((request) => request(axios, basePath));
         },
         /**
@@ -1415,7 +1466,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        authControllerVerifyEmail(email: string, token: string, options?: any): AxiosPromise<void> {
+        authControllerVerifyEmail(email: string, token: string, options?: any): AxiosPromise<VerifyEmailResponseDto> {
             return localVarFp.authControllerVerifyEmail(email, token, options).then((request) => request(axios, basePath));
         },
         /**
