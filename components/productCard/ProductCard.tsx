@@ -19,9 +19,9 @@ export default function ProductCard() {
                     stroke="currentColor"
                   >
                     <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
                       d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
                     />
                   </svg>
@@ -59,63 +59,18 @@ export default function ProductCard() {
                 </div>
                 {/* Rating end*/}
 
-                {/* Title */}
                 <div className="flex w-full min-w-0 items-center justify-between ">
                   <h2 className="mr-auto cursor-pointer truncate text-xl text-gray-200 hover:text-secondary ">
                     Mustard Jacket
                   </h2>
                 </div>
-                {/* Title end */}
               </div>
-              {/* Price */}
+
               <div className="mt-1 text-xl font-semibold text-white">
                 $240.00
               </div>
-              {/* Price end */}
-              {/* Size and color grp */}
 
               <div className="flex  pt-4  text-sm text-gray-600">
-                {/* Color */}
-                {/* <div className="flex-1 inline-flex items-center  mb-3">
-                  <div className="w-full flex-none text-sm flex items-center text-gray-600">
-                    <ul className="flex flex-row justify-center items-center space-x-2">
-                      <li className="">
-                        <span className="block p-1 border-2 border-gray-900 hover:border-blue-600 rounded-full transition ease-in duration-300">
-                          <a
-                            href="#blue"
-                            className="block w-3 h-3 bg-blue-600 rounded-full"
-                          ></a>
-                        </span>
-                      </li>
-                      <li className="">
-                        <span className="block p-1 border-2 border-gray-900 hover:border-yellow-400 rounded-full transition ease-in duration-300">
-                          <a
-                            href="#yellow"
-                            className="block w-3 h-3  bg-yellow-400 rounded-full"
-                          ></a>
-                        </span>
-                      </li>
-                      <li className="">
-                        <span className="block p-1 border-2 border-gray-900 hover:border-red-500 rounded-full transition ease-in duration-300">
-                          <a
-                            href="#red"
-                            className="block w-3 h-3  bg-red-500 rounded-full"
-                          ></a>
-                        </span>
-                      </li>
-                      <li className="">
-                        <span className="block p-1 border-2 border-gray-900 hover:border-green-500 rounded-full transition ease-in duration-300">
-                          <a
-                            href="#green"
-                            className="block w-3 h-3  bg-green-500 rounded-full"
-                          ></a>
-                        </span>
-                      </li>
-                    </ul>
-                  </div>
-                </div> */}
-                {/* Color end */}
-
                 <div className="inline-flex flex-1 items-center ">
                   <span className="mr-3 whitespace-nowrap text-secondary">
                     Size
@@ -127,60 +82,10 @@ export default function ProductCard() {
                     <span className="p-1 py-0 hover:text-secondary">XL</span>
                   </div>
                 </div>
-                <button className="mb-2 inline-flex items-center rounded-full bg-primrary px-5 py-2 text-sm font-medium tracking-wider text-white text-font-secondary transition duration-300 ease-in hover:bg-accent hover:shadow-lg md:mb-0">
+                <button className="mb-2 inline-flex items-center rounded-full bg-primrary px-5 py-2 text-sm font-medium tracking-wider  text-font-secondary transition duration-300 ease-in hover:bg-accent hover:shadow-lg md:mb-0">
                   <span>Add Cart</span>
                 </button>
               </div>
-
-              {/* Size and color grp emd */}
-
-              {/* Btn grp */}
-              <div className="my-4 flex justify-between space-x-2 text-sm font-medium ">
-                {/* <button className="transition ease-in duration-300 inline-flex items-center text-sm font-medium mb-2 md:mb-0 bg-purple-500 px-5 py-2 hover:shadow-lg tracking-wider text-white rounded-full hover:bg-purple-600 ">
-                  <span>Add Cart</span>
-                </button> */}
-                {/* <button className="transition ease-in duration-300 bg-gray-700 hover:bg-gray-800 border hover:border-gray-500 border-gray-700 hover:text-white  hover:shadow-lg text-gray-400 rounded-full w-9 h-9 text-center p-2">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className=""
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-                    />
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
-                    />
-                  </svg>
-                </button> */}
-                {/* <div className=" flex flex-col top-0 right-0 ">
-                  <button className="transition ease-in duration-300 bg-secondary  hover:text-purple-500 shadow hover:shadow-md text-font-secondary rounded-full w-8 h-8 text-center p-1">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-6 w-6"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
-                      />
-                    </svg>
-                  </button>
-                </div> */}
-              </div>
-              {/* Btn grp end */}
             </div>
           </div>
         </div>

@@ -7,15 +7,16 @@ const distanceFromLast = (x: any, y: any, last: any) => {
   return Math.hypot(x - last.x, y - last.y);
 };
 export default function Hero() {
-    const [onMobile] = useState(isMobile()); 
-//   const windowDimensions = useWindowDimensions();
+  //! error here breaks ssr
+  //! fix const [onMobile] = useState(isMobile());
+  const [onMobile] = useState(false);
   const [last, setLast] = useState({
     x: 200,
     y: 200,
   });
   const indexRef = useRef<number>(0);
   const pathIndex = useRef<number>(0);
-//   const zxc = useRef<{ x: number; y: number }[]>([]);
+  //   const zxc = useRef<{ x: number; y: number }[]>([]);
   const imagesRef = useRef<HTMLCollectionOf<HTMLElement> | null>(null);
   useEffect(() => {
     const images = document.getElementsByClassName("photo-trail");
@@ -24,9 +25,9 @@ export default function Hero() {
     indexRef.current = 0;
   }, []);
   useEffect(() => {
-    if ( onMobile ) {
+    if (onMobile) {
       animate();
-    } 
+    }
   }, [onMobile]);
 
   const activate = (index: number, x: number, y: number) => {
@@ -110,7 +111,11 @@ export default function Hero() {
 
   return (
     <div
-      onMouseMove={ onMobile ? undefined: (e) => handleMouseMove({ x: e.clientX, y: e.clientY })}
+      onMouseMove={
+        onMobile
+          ? undefined
+          : (e) => handleMouseMove({ x: e.clientX, y: e.clientY })
+      }
       //! remove static height
       className=" border- relative h-[70vmin] overflow-hidden border-primrary  text-lg lg:text-7xl"
     >

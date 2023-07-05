@@ -1,4 +1,5 @@
-import Navbar from "../components/navbar";
+import Navbar from "../components/Navbar/Navbar";
+import { AuthProvider } from "../util/context/AuthContext";
 import "./globals.css";
 
 export default function RootLayout({
@@ -14,10 +15,12 @@ export default function RootLayout({
       */}
       <head />
       <body className="flex min-h-screen flex-col">
-        <Navbar />
-        <main className="">
-          <div className="m-auto  ">{children}</div>
-        </main>
+        <AuthProvider>
+          <Navbar />
+          <main className="">
+            <div className="m-auto  ">{children}</div>
+          </main>
+        </AuthProvider>
       </body>
     </html>
   );
