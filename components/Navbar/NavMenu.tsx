@@ -1,23 +1,29 @@
 "use client";
-import React, { useContext } from "react";
-import { useAuthContext } from "../../util/context/AuthContext";
+import { useEffect } from "react";
+import { useAuth } from "../../atoms/hooks/useAuth";
 
 export default function NavMenu() {
-  const { user } = useAuthContext();
+  const { user, fetchUser } = useAuth();
 
-  //   if (user) {
-  //     return (
-  //       <ul className="">
-  //       </ul>
-  //     );
-  //   }
-
+  //! move
+  useEffect(() => {
+    console.log("trying");
+    if (user) {
+      console.log("USER ALREADY THERE");
+      return;
+    }
+    //!no suspense
+    //!add loading and error
+    //!check SSR
+    fetchUser();
+  }, []);
   return (
     <ul className="flex gap-4 mx-4 ">
       {user ? (
         <>
           <li>Profile</li>
           <li>Cart</li>
+          <li>{user.name}</li>
         </>
       ) : (
         <>

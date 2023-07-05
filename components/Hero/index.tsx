@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
+import { useAuth } from "../../atoms/hooks/useAuth";
 import { fakePhotos } from "../../util/fakeData";
 import useWindowDimensions from "../../util/hooks/useWindowDimensions";
 import isMobile from "../../util/isMobile";
@@ -7,6 +8,7 @@ const distanceFromLast = (x: any, y: any, last: any) => {
   return Math.hypot(x - last.x, y - last.y);
 };
 export default function Hero() {
+  const { user } = useAuth();
   //! error here breaks ssr
   //! fix const [onMobile] = useState(isMobile());
   const [onMobile] = useState(false);
@@ -121,7 +123,7 @@ export default function Hero() {
     >
       <div className="relative  top-20 z-50 m-6 font-semibold lg:top-20 lg:m-20">
         <h1 className="relative max-w-fit rounded-xl bg-primrary p-2 text-font-secondary  lg:p-4">
-          UNIQUE STYLES
+          UNIQUE STYLES {user?.name}
         </h1>
         <h1 className="relative left-20 mt-1 max-w-fit rounded-xl bg-primrary p-2 text-font-secondary lg:left-80  lg:p-4">
           FITTING YOUR EVERY NEED

@@ -1,5 +1,6 @@
+import { Suspense } from "react";
 import NavMenu from "./NavMenu";
-import SearchBar from "./searchBar";
+import SearchBar from "./SearchBar";
 
 export default function Navbar() {
   return (
@@ -7,7 +8,9 @@ export default function Navbar() {
       <div className="mx-4 flex h-20 items-center justify-between   ">
         <img src="../next.svg" className="w-20 bg-white" />
         <SearchBar />
-        <NavMenu />
+        <Suspense fallback={<h1>Loading...</h1>}>
+          <NavMenu />
+        </Suspense>
       </div>
     </nav>
   );

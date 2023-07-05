@@ -1,32 +1,22 @@
 "use client";
-import axios from "axios";
-import { useContext, useEffect, useState } from "react";
-import { useAuthContext } from "../../util/context/AuthContext";
+import { useState } from "react";
+import { useAuth } from "../../atoms/hooks/useAuth";
 
 export default function Signin() {
-  const { signIn, user } = useAuthContext();
+  const { signIn } = useAuth();
   const [email, setEmail] = useState("abc@gmail.com");
   const [password, setPassword] = useState("Abc@12345");
-  // const getData = async () => {
-  //   try {
-  //     const data = await axios
-  //       .get("http://localhost:5000/products/all", {
-  //         withCredentials: false,
-  //       })
-  //       .then((data) => data.data);
-  //     console.log(data);
-  //     return data;
-  //   } catch (err) {
-  //     console.log(err);
-  //   }
-  // };
 
-  // useEffect(())
-
-  useEffect(() => {
-    console.log("user", user);
-  }, [user]);
-
+  const signInHandler = async () => {
+    try {
+      await signIn({
+        email,
+        password,
+      });
+    } catch (err: any) {
+      alert(err.message); //!chaneg ui
+    }
+  };
   return (
     <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-lg rounded-lg border-2 border-cyan-500 p-4">
@@ -104,12 +94,7 @@ export default function Signin() {
 
           <button
             // type="submit"
-            onClick={() => {
-              signIn({
-                email,
-                password,
-              });
-            }}
+            onClick={signInHandler}
             className="block w-full rounded-lg bg-indigo-600 px-5 py-3 text-sm font-medium text-white"
           >
             Sign in

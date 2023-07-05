@@ -1,17 +1,7 @@
-// "use client";
-// import { useEffect } from "react";
-import axios from "axios";
 import Hero from "../../components/Hero";
 import ProductCard from "../../components/productCard/ProductCard";
 
 export default function Home() {
-  // const data = await getData();
-  // console.log(data);
-
-  // useEffect(() => {
-  //   getData();
-  // }, []);
-
   return (
     <div>
       <Hero />

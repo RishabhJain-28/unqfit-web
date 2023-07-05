@@ -1,12 +1,27 @@
+import JotaiProvider from "../atoms/JotaiProvider";
+import { UserResponseDto } from "../clientApi/.generated";
 import Navbar from "../components/Navbar/Navbar";
-import { AuthProvider } from "../util/context/AuthContext";
 import "./globals.css";
 
-export default function RootLayout({
+// const getUser = async (): Promise<UserResponseDto> => {
+//   // const res = await fetch("http://localhost:5000/products/1");
+//   // return res.json();
+
+//   return {
+//     name: "THis is my name ",
+//     role: "ADMIN",
+//     email: "sdas",
+//     id: 1,
+//   };
+// };
+
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  // const user = await getUser();
+  // console.log(user);
   return (
     <html lang="en">
       {/*
@@ -15,12 +30,14 @@ export default function RootLayout({
       */}
       <head />
       <body className="flex min-h-screen flex-col">
-        <AuthProvider>
+        {/* Does Jotai provider being an client comp break or mitigate server components */}
+        <JotaiProvider>
           <Navbar />
-          <main className="">
-            <div className="m-auto  ">{children}</div>
+
+          <main>
+            <div className="m-auto">{children}</div>
           </main>
-        </AuthProvider>
+        </JotaiProvider>
       </body>
     </html>
   );

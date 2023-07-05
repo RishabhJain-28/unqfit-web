@@ -5,6 +5,7 @@ import { BACKEND_URL } from "./constants";
 // export const axiosBaseUrl = `${process.env.REACT_APP_BACKEND_URL}`;
 export const axiosConfig: AxiosRequestConfig = {
   baseURL: BACKEND_URL,
+  withCredentials: true,
 };
 
 const axiosBackendClient = axios.create(axiosConfig);
