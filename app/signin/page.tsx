@@ -19,8 +19,8 @@ export default function Signin() {
   };
   return (
     <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
-      <div className="mx-auto max-w-lg rounded-lg border-2 border-cyan-500 p-4">
-        <h1 className="text-center text-2xl font-bold text-cyan-500 sm:text-3xl">
+      <div className="mx-auto max-w-lg rounded-lg border-2 border-secondary p-4">
+        <h1 className="text-center text-2xl font-bold text-secondary sm:text-3xl">
           Enter the world of fashion
         </h1>
 

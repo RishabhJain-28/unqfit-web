@@ -1,7 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 const p1 = {
   // background: "#14213d",
-  background: "#313638",
+  background: "#121212",
+  surface: "#313638",
   primrary: "#49dcb1",
   "primrary-variant": "#49beaa",
   secondary: "#eeb868",

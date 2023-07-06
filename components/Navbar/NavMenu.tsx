@@ -1,10 +1,13 @@
 "use client";
+import Link from "next/link";
 import { useEffect } from "react";
 import { useAuth } from "../../atoms/hooks/useAuth";
-
+import Menu from "../Menu";
+import MenuItem from "../Menu/MenuItem";
+import { FaRegUserCircle } from "react-icons/fa";
+import { AiOutlineShoppingCart } from "react-icons/ai";
 export default function NavMenu() {
-  const { user, fetchUser } = useAuth();
-
+  const { user, fetchUser, signOut } = useAuth();
   //! move
   useEffect(() => {
     console.log("trying");
@@ -18,19 +21,48 @@ export default function NavMenu() {
     fetchUser();
   }, []);
   return (
-    <ul className="flex gap-4 mx-4 ">
+    <div className="flex gap-5 mx-4 ">
       {user ? (
         <>
-          <li>Profile</li>
-          <li>Cart</li>
-          <li>{user.name}</li>
+          <Menu
+            renderToggleButton={
+              <button className="flex justify-center items-center rounded-full">
+                <FaRegUserCircle size={30} className="rounded-full text-xl  " />
+              </button>
+            }
+          >
+            <div
+              className=""
+              onClick={() => {
+                console.log("Profile");
+              }}
+            >
+              Profile
+            </div>
+            <div>My orders</div>
+            <div
+              onClick={() => {
+                console.log("SDa");
+                signOut();
+                //!add alert
+              }}
+            >
+              Logout
+            </div>
+          </Menu>
+          <button className="flex justify-center items-center">
+            <AiOutlineShoppingCart className="text-xl  w-10 " size={30} />
+          </button>
         </>
       ) : (
         <>
-          <li>Home </li>
-          <li>Login</li>
+          {/* <div> */}
+          <Link href="/signin"> Sign In </Link>
+          <Link href="/signup"> Sign Up </Link>
+          {/* </div> */}
+          {/* <li>Signup </li> */}
         </>
       )}
-    </ul>
+    </div>
   );
 }

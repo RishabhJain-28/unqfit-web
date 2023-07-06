@@ -38,13 +38,17 @@ export const useAuth = (init?: UserResponseDto) => {
     }
   };
 
-  // const signOut= ()=>{
-  //     API.authControllerSignout()
-  // }
+  const signOut = async () => {
+    console.log("here");
+    const res = await API.authControllerSignout().then((res) => res.data);
+    setUser(null);
+    return res;
+  };
 
   return {
     user,
     signIn,
     fetchUser,
+    signOut,
   };
 };

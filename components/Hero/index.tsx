@@ -121,9 +121,9 @@ export default function Hero() {
       //! remove static height
       className=" border- relative h-[70vmin] overflow-hidden border-primrary  text-lg lg:text-7xl"
     >
-      <div className="relative  top-20 z-50 m-6 font-semibold lg:top-20 lg:m-20">
+      <div className="relative  top-20 z-20 m-6 font-semibold lg:top-20 lg:m-20">
         <h1 className="relative max-w-fit rounded-xl bg-primrary p-2 text-font-secondary  lg:p-4">
-          UNIQUE STYLES {user?.name}
+          UNIQUE STYLES
         </h1>
         <h1 className="relative left-20 mt-1 max-w-fit rounded-xl bg-primrary p-2 text-font-secondary lg:left-80  lg:p-4">
           FITTING YOUR EVERY NEED

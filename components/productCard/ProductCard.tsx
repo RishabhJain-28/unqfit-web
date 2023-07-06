@@ -1,4 +1,5 @@
 import { fakePhotos } from "../../util/fakeData";
+import AddToCartButton from "../AddToCartButton";
 
 export default function ProductCard() {
   return (
@@ -82,9 +83,10 @@ export default function ProductCard() {
                     <span className="p-1 py-0 hover:text-secondary">XL</span>
                   </div>
                 </div>
-                <button className="mb-2 inline-flex items-center rounded-full bg-primrary px-5 py-2 text-sm font-medium tracking-wider  text-font-secondary transition duration-300 ease-in hover:bg-accent hover:shadow-lg md:mb-0">
+                {/* <button className="mb-2 inline-flex items-center rounded-full bg-primrary px-5 py-2 text-sm font-medium tracking-wider  text-font-secondary transition duration-300 ease-in hover:bg-accent hover:shadow-lg md:mb-0">
                   <span>Add Cart</span>
-                </button>
+                </button> */}
+                <AddToCartButton />
               </div>
             </div>
           </div>
