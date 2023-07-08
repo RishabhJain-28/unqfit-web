@@ -1,5 +1,5 @@
-import Hero from "../../components/Hero";
-import ProductCard from "../../components/productCard/ProductCard";
+import Hero from "../components/Hero";
+import ProductCard from "../components/productCard/ProductCard";
 
 export default function Home() {
   return (

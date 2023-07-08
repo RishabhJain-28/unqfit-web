@@ -5,24 +5,12 @@ import { AuthDto, UserResponseDto } from "../../clientApi/.generated";
 import { userAtom } from "../user";
 
 export const useAuth = (init?: UserResponseDto) => {
-  // useHydrateAtoms([
-  //   [
-  //     userAtom,
-  //     {
-  //       name: "THis is my name ",
-  //       role: "ADMIN",
-  //       email: "sdas",
-  //       id: 1,
-  //     },
-  //   ],
-  // ]);
-
   const [user, setUser] = useAtom(userAtom);
-
   const fetchUser = async () => {
     const data = await API.userControllerGetMe().then((res) => res.data);
     setUser(data);
   };
+
   const signIn = async (authDto: AuthDto) => {
     try {
       const data = await API.authControllerSignin(authDto).then(

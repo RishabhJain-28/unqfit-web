@@ -57,8 +57,8 @@ export default function NavMenu() {
       ) : (
         <>
           {/* <div> */}
-          <Link href="/signin"> Sign In </Link>
-          <Link href="/signup"> Sign Up </Link>
+          <Link href="/auth/signin"> Sign In </Link>
+          <Link href="/auth/signup"> Sign Up </Link>
           {/* </div> */}
           {/* <li>Signup </li> */}
         </>

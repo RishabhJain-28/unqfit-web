@@ -1,5 +1,6 @@
 import JotaiProvider from "../atoms/JotaiProvider";
 import { UserResponseDto } from "../clientApi/.generated";
+import Cart from "../components/Cart";
 import Navbar from "../components/Navbar/Navbar";
 import "./globals.css";
 
@@ -32,6 +33,7 @@ export default async function RootLayout({
       <body className="flex min-h-screen flex-col">
         {/* Does Jotai provider being an client comp break or mitigate server components */}
         <JotaiProvider>
+          <Cart />
           <Navbar />
 
           <main>

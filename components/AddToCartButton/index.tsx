@@ -19,9 +19,9 @@ export default function AddToCartButton() {
             <g
               id="arrow"
               stroke="none"
-              stroke-width="1"
+              strokeWidth="1"
               fill="none"
-              fill-rule="evenodd"
+              fillRule="evenodd"
             >
               <path
                 className="one"
