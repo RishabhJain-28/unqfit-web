@@ -23,7 +23,7 @@ const ButtonWithLoading: React.FC<
     <button
       // onClick={onClick}
       //   className="block w-1/3 rounded-lg bg-primrary-variant px-5 py-3 text-sm font-medium text-black"
-      className={`block w-1/3 rounded-lg px-5 py-3 text-lg font-medium text-black ${
+      className={`block min-w-1/3 rounded-lg px-5 py-3 text-lg font-medium text-black ${
         gradiant ? "btn-grad" : "bg-primrary"
       }`}
       {...props}

@@ -17,7 +17,7 @@ export default function Signin() {
         </h1>
 
         <div className="mb-0 mt-6  rounded-lg px-4 shadow-lg sm:px-6 lg:px-8 text-black">
-          <p className="text-center text-lg font-medium">
+          <p className=" text-white text-center text-lg font-medium">
             Sign in to your account
           </p>
           <SignInForm />
@@ -25,7 +25,7 @@ export default function Signin() {
             <p className="text-center text-sm text-accent">
               No account?{" "}
               <Link className="underline" href="/auth/signup">
-                Sign up.
+                Sign up
               </Link>
             </p>
             <p className="text-center text-sm text-accent">
